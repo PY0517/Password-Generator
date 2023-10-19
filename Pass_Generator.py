@@ -6,25 +6,30 @@ symbols=['*','$','@','&','(',')','!','#','%','^','_']
 letter=int(input("How many letters you want in password?"))
 number=int(input("How many numbers you want in password?"))
 symbol=int(input("How many symbol you want in password?"))
-password_list=[]
+cal=(letter+number+symbol)
+# print(len(cal))
+if cal<8:
+    print("Password should be greater than 8 Characters")
+else:
+    password_list=[]
 
-for i in range(1,letter+1):
-    char=random.choice(letters)
-    password_list+=char
+    for i in range(1,letter+1):
+        char=random.choice(letters)
+        password_list+=char
 
-for i in range(1,number+1):
-    char=random.choice(numbers)
-    password_list+=char
+    for i in range(1,number+1):
+        char=random.choice(numbers)
+        password_list+=char
 
-for i in range(1,symbol+1):
-    char=random.choice(symbols)
-    password_list+=char
+    for i in range(1,symbol+1):
+        char=random.choice(symbols)
+        password_list+=char
 
-# print(password_list)
-random.shuffle(password_list)
-#print(password_list)
+        # print(password_list)
+    random.shuffle(password_list)
+        #print(password_list)
 
-password=""
-for char in password_list:
-    password+=char
-print(password)
+    password=""
+    for char in password_list:
+        password+=char
+    print(password)
